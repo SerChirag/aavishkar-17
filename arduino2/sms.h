@@ -6,7 +6,7 @@ void setupGSM()
 {
   // put your setup code here, to run once:
   sms.begin(38400);
-  delay(100);
+  delay(10);
   //Serial.begin(38400);
 i = 1;
 }

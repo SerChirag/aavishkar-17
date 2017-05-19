@@ -20,14 +20,14 @@ NewPing s1(12, 11, 100);
 NewPing s2(29, 25, 100);
 NewPing s3(10, 9, 100);
 NewPing s4(10,9, 100);
-NewPing s5(A4, A5, 100);
+NewPing s5(A12, A5, 100);
 NewPing s6(A2, A3, 100);
 NewPing s7(A9, A8, 100);
 NewPing s8(12, 11, 100); 
 
-const int frontThreshold =7 , frontMax = 100;
-const int backThreshold = 8, backMax = 20;
-const int sideThreshold = 15, sideMax = 30;
+const int frontThreshold =15 , frontMax = 100;
+const int backThreshold = 10, backMax = 20;
+const int sideThreshold = 10, sideMax = 30;
 
 const int FPT = 2, FPM = 5;
 const int BPT = 2, BPM = 5;
@@ -59,20 +59,20 @@ void beep(int a)
     for(i=0;i<1;i++)
     {
         tone(buzzer, 1000); 
-        delay(20);        
+        delay(5);        
          noTone(buzzer);
-         delay(20);
+         delay(5);
       }
   }
   else if(a==2)
   {
     Serial.println("DUCK");
-   /* for(i=0;i<4;i++){
+    for(i=0;i<2;i++){
     tone(buzzer, 1500); 
-        delay(50);        
+        delay(5);        
          noTone(buzzer);
          delay(1);
-    }*/
+    }
     }
     else if(a==3)
     {
@@ -373,7 +373,7 @@ int ret;
 
 int BCDloop()
 {
-  delay(100);
+  //delay(100);
   if(active)
   {
     prevMillis = currentMillis;

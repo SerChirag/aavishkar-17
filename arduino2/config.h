@@ -31,4 +31,4 @@ int rb2=44;
 
 
 
-  bool parking = false, active = true , pf = 0, turning = true;
+  bool parking = false, active = false , pf = 0, turning = false;

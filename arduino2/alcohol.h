@@ -21,5 +21,5 @@ int alcohol()
     return 0;
   }
 
-  delay(100); //Just here to slow down the output.
+  //delay(100); //Just here to slow down the output.
 }

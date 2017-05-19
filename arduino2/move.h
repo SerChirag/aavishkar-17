@@ -108,23 +108,18 @@ void movementProcess() {
         remote = remote / 1000;
         remote%10 == 1? forward = forward * -1 : forward = forward;
         remote = remote/10;
-        int parkingstate = remote;
+        parking = remote;
         /**************************/
-        parking = parkingstate;
+        //parking = parkingstate;
         /**************************/
         Steer( forward, turn);
-        /*Serial.print("f:");
-        Serial.print(forward);
-        Serial.print(" t:");
-        Serial.print(turn);
-        Serial.print(" p:");
-        Serial.println(parkingstate);*/
+        if(parking != 1 && forward != 0)
+        {
+          active = false;
+        }
+        else active = true;
       }
-//    }
+  }
  }
- //else Serial.println("not available");
- 
- //state=150.0;
- //delay(4);
-}
+
 

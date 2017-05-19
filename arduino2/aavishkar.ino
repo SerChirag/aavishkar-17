@@ -19,6 +19,8 @@
     setupGSM();
     setupBeep();
   }
+
+  int count = 0;
   
   void loop() 
   {
@@ -29,15 +31,27 @@
       }
       else
       {*/
+         unsigned long int t1 = millis(),t2;
          if(!BCDloop())
           {
               Serial.println("collision is imminent");
               brake();
+              count =0;
+              t2 = millis() - t1;
           }
           else
           {
-            movementProcess();
+            while (Serial.available() && Serial.read());
+            t2 = millis() - t1;
+            for(int i=0 ; i<(count==0?10:5) ; i++)
+            {
+              movementProcess();
+              delay(10);
+            }
+            count++;
           }
+          Serial.println(t2);
+          
      // }
 
     /* BCDloop();
